@@ -40,48 +40,47 @@ const Login = () => {
 	};
 
 	return (
-		<>
-			<NavBar />
-
-			<FormWrapper>
-				<FormContainer>
-					<h1>Login</h1>
-					<p className="text-danger">{error}</p>
-
-					<form action="" onSubmit={login}>
-						<InputWrapper>
-							<input
-								type="email"
-								placeholder="Email address"
-								value={userLogin.email}
-								onChange={(e) => {
-									setUserLoginEmail(e.target.value);
-									setError("");
-								}}
-							/>
-						</InputWrapper>
-						<InputWrapper>
-							<input
-								type="password"
-								placeholder="Password"
-								value={userLogin.password}
-								onChange={(e) => {
-									setUserLoginPassword(e.target.value);
-									setError("");
-								}}
-							/>
-						</InputWrapper>
-
-						<p>
-							Not have an account? <Link to="/users/signup">Register</Link>
-						</p>
-						<FormBtn type="submit">Login</FormBtn>
-					</form>
-				</FormContainer>
-			</FormWrapper>
+		<div className="app">
+			<div>
+				<NavBar />
+				<FormWrapper>
+					<FormContainer>
+						<h1>Login</h1>
+						<p className="text-danger">{error}</p>
+						<form action="" onSubmit={login}>
+							<InputWrapper>
+								<input
+									type="email"
+									placeholder="Email address"
+									value={userLogin.email}
+									onChange={(e) => {
+										setUserLoginEmail(e.target.value);
+										setError("");
+									}}
+								/>
+							</InputWrapper>
+							<InputWrapper>
+								<input
+									type="password"
+									placeholder="Password"
+									value={userLogin.password}
+									onChange={(e) => {
+										setUserLoginPassword(e.target.value);
+										setError("");
+									}}
+								/>
+							</InputWrapper>
+							<p>
+								Not have an account? <Link to="/users/signup">Register</Link>
+							</p>
+							<FormBtn type="submit">Login</FormBtn>
+						</form>
+					</FormContainer>
+				</FormWrapper>
+			</div>
 
 			<Footer />
-		</>
+		</div>
 	);
 };
 
